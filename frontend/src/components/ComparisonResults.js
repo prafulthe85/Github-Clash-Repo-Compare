@@ -1,9 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './ComparisonResults.scss';
-import UserCard from './UserCard';
-import AIComparison from './AIComparison';
+import "./ComparisonResults.scss";
+import UserCard from "./UserCard";
+import AIComparison from "./AIComparison";
 
-const ComparisonResults = ({ results, onReset, isStreaming = false, onRoast, disabledRoastButtons = [] }) => {
+const ComparisonResults = ({
+  results,
+  onReset,
+  isStreaming = false,
+  onRoast,
+  disabledRoastButtons = [],
+}) => {
   const { user1, user2, comparison } = results;
 
   // Disable "Compare Another" button while streaming
@@ -19,8 +24,10 @@ const ComparisonResults = ({ results, onReset, isStreaming = false, onRoast, dis
     <div className="comparison-results">
       <div className="results-header">
         <h2>Comparison Results</h2>
-        <button 
-          className={`reset-button ${isCompareAnotherDisabled ? 'disabled' : ''}`}
+        <button
+          className={`reset-button ${
+            isCompareAnotherDisabled ? "disabled" : ""
+          }`}
           onClick={handleReset}
           disabled={isCompareAnotherDisabled}
         >
@@ -34,8 +41,8 @@ const ComparisonResults = ({ results, onReset, isStreaming = false, onRoast, dis
         <UserCard user={user2} position="right" />
       </div>
 
-      <AIComparison 
-        comparison={comparison || ''} 
+      <AIComparison
+        comparison={comparison || ""}
         isStreaming={isStreaming}
         user1={user1}
         user2={user2}
@@ -47,4 +54,3 @@ const ComparisonResults = ({ results, onReset, isStreaming = false, onRoast, dis
 };
 
 export default ComparisonResults;
-
