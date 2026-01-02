@@ -1,0 +1,210 @@
+.user-card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .user-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f3f4f6;
+    position: relative;
+
+    .user-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #6366f1;
+      object-fit: cover;
+    }
+
+    .user-info {
+      flex: 1;
+
+      .user-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #111827;
+        margin-bottom: 0.25rem;
+      }
+
+      .user-username-link {
+        text-decoration: none;
+        display: inline-block;
+        transition: transform 0.2s ease;
+
+        &:hover {
+          transform: translateX(3px);
+        }
+
+        .user-username {
+          font-size: 1rem;
+          color: #6366f1;
+          font-weight: 500;
+          transition: color 0.2s ease;
+          cursor: pointer;
+
+          &:hover {
+            color: #4f46e5;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .github-link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      flex-shrink: 0;
+
+      &:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .user-bio {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .user-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    border-radius: 12px;
+
+    .stat-item {
+      text-align: center;
+
+      .stat-value {
+        display: block;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #6366f1;
+        margin-bottom: 0.25rem;
+      }
+
+      .stat-label {
+        display: block;
+        font-size: 0.85rem;
+        color: #6b7280;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+
+  .user-details {
+    margin-bottom: 1.5rem;
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f3f4f6;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #374151;
+        font-size: 0.9rem;
+      }
+
+      .detail-value {
+        color: #6b7280;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .user-languages {
+    .languages-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.75rem;
+    }
+
+    .languages-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+
+      .language-tag {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .user-card {
+    padding: 1.5rem;
+
+    .user-header {
+      .user-avatar {
+        width: 60px;
+        height: 60px;
+      }
+
+      .user-info {
+        .user-name {
+          font-size: 1.2rem;
+        }
+
+        .user-username {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .user-stats {
+      .stat-item {
+        .stat-value {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
